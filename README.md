@@ -82,77 +82,80 @@ making certain that the actions are given in the proper order.
 3. For the LIST command, display the names of the components currently installed.
 4. For the DEPEND and END commands, no output, except the echo, is produced.
 5. For the DEPEND command, there will only be one dependency list per item.
-Sample Input
-DEPEND TELNET TCPIP NETCARD
-DEPEND TCPIP NETCARD
-DEPEND DNS TCPIP NETCARD
-DEPEND BROWSER TCPIP HTML
-INSTALL NETCARD
-INSTALL TELNET
-INSTALL foo
-REMOVE NETCARD
-INSTALL BROWSER
-INSTALL DNS
-LIST
-REMOVE TELNET
-REMOVE NETCARD
-REMOVE DNS
-REMOVE NETCARD
-INSTALL NETCARD
-REMOVE TCPIP
-REMOVE BROWSER
-REMOVE TCPIP
-LIST
-END
-Expected Sample Output
-DEPEND TELNET TCPIP NETCARD
-DEPEND TCPIP NETCARD
-DEPEND DNS TCPIP NETCARD
-DEPEND BROWSER TCPIP HTML
-INSTALL NETCARD
-NETCARD successfully installed
-INSTALL TELNET
-TCPIP successfully installed
-TELNET successfully installed
-INSTALL foo
-foo successfully installed
-REMOVE NETCARD
+    
+*Sample Input*
+```    DEPEND TELNET TCPIP NETCARD
+    DEPEND TCPIP NETCARD
+    DEPEND DNS TCPIP NETCARD
+    DEPEND BROWSER TCPIP HTML
+    INSTALL NETCARD
+    INSTALL TELNET
+    INSTALL foo
+    REMOVE NETCARD
+    INSTALL BROWSER
+    INSTALL DNS
+    LIST
+    REMOVE TELNET
+    REMOVE NETCARD
+    REMOVE DNS
+    REMOVE NETCARD
+    INSTALL NETCARD
+    REMOVE TCPIP
+    REMOVE BROWSER
+    REMOVE TCPIP
+    LIST
+    END```
 
-NETCARD is still needed.
-INSTALL BROWSER
-HTML successfully installed
-BROWSER successfully installed
-INSTALL DNS
-DNS successfully installed
-LIST
-HTML
-BROWSER
-DNS
-NETCARD
-foo
-TCPIP
-TELNET
-REMOVE TELNET
-TELNET successfully removed
-REMOVE NETCARD
-NETCARD is still needed
-REMOVE DNS
-DNS successfully removed
-REMOVE NETCARD
-NETCARD is still needed
-INSTALL NETCARD
-NETCARD is already installed
-REMOVE TCPIP
-TCPIP is still needed
-REMOVE BROWSER
-BROWSER successfully removed
-HTML is no longer needed
-HTML successfully removed
-TCPIP is no longer needed
-TCPIP successfully removed
-REMOVE TCPIP
-TCPIP is not installed
-LIST
-NETCARD
-foo
-END
+
+*Expected Sample Output*
+```    DEPEND TELNET TCPIP NETCARD
+    DEPEND TCPIP NETCARD
+    DEPEND DNS TCPIP NETCARD
+    DEPEND BROWSER TCPIP HTML
+    INSTALL NETCARD
+    NETCARD successfully installed
+    INSTALL TELNET
+    TCPIP successfully installed
+    TELNET successfully installed
+    INSTALL foo
+    foo successfully installed
+    REMOVE NETCARD
+
+    NETCARD is still needed.
+    INSTALL BROWSER
+    HTML successfully installed
+    BROWSER successfully installed
+    INSTALL DNS
+    DNS successfully installed
+    LIST
+    HTML
+    BROWSER
+    DNS
+    NETCARD
+    foo
+    TCPIP
+    TELNET
+    REMOVE TELNET
+    TELNET successfully removed
+    REMOVE NETCARD
+    NETCARD is still needed
+    REMOVE DNS
+    DNS successfully removed
+    REMOVE NETCARD
+    NETCARD is still needed
+    INSTALL NETCARD
+    NETCARD is already installed
+    REMOVE TCPIP
+    TCPIP is still needed
+    REMOVE BROWSER
+    BROWSER successfully removed
+    HTML is no longer needed
+    HTML successfully removed
+    TCPIP is no longer needed
+    TCPIP successfully removed
+    REMOVE TCPIP
+    TCPIP is not installed
+    LIST
+    NETCARD
+    foo
+    END```
