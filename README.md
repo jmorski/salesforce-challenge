@@ -24,22 +24,19 @@ that to install a given software package
 package, another package must be installed beforehand.
 Additionally lower level software components are often required by multiple upper level
 packages. For example, both the telnet client program and the ftp client program require that
-the TCP/IP networking package.. Conversely, the TCP/IP p
-package
-ackage cannot be removed until all
-packages that depend on it (telnet
-telnet, ftp) are removed.
+the TCP/IP networking package.. Conversely, the TCP/IP package cannot be removed until all
+packages that depend on it (telnet ftp) are removed.
 We want you to design and write a program to automate the process of adding and removing
 software packages. To do this you will need to:
 
-1. Maintain a record of installed packages and their dependencies.
-2. Support explicitly installing a package in response to a command (unless it is already
-installed).
-3. Support implicitly installing a package if it is needed to install another package.
-4. Support explicitly removing a package in response to a command (if it is not needed to
-support other packages).
-5. Support implicitly removing a package if it is no longer needed to support another
-component.
+    1. Maintain a record of installed packages and their dependencies.
+    2. Support explicitly installing a package in response to a command (unless it is already
+    installed).
+    3. Support implicitly installing a package if it is needed to install another package.
+    4. Support explicitly removing a package in response to a command (if it is not needed to
+    support other packages).
+    5. Support implicitly removing a package if it is no longer needed to support another
+    component.
 
 Before installing a package, automatically install all the packages it requires.
 Before removing a package, confirm that no other packages require it. Dependent
@@ -84,7 +81,8 @@ making certain that the actions are given in the proper order.
 5. For the DEPEND command, there will only be one dependency list per item.
     
 *Sample Input*
-```    DEPEND TELNET TCPIP NETCARD
+```    
+    DEPEND TELNET TCPIP NETCARD
     DEPEND TCPIP NETCARD
     DEPEND DNS TCPIP NETCARD
     DEPEND BROWSER TCPIP HTML
@@ -104,11 +102,13 @@ making certain that the actions are given in the proper order.
     REMOVE BROWSER
     REMOVE TCPIP
     LIST
-    END```
+    END
+```
 
 
 *Expected Sample Output*
-```    DEPEND TELNET TCPIP NETCARD
+```    
+    DEPEND TELNET TCPIP NETCARD
     DEPEND TCPIP NETCARD
     DEPEND DNS TCPIP NETCARD
     DEPEND BROWSER TCPIP HTML
@@ -158,4 +158,5 @@ making certain that the actions are given in the proper order.
     LIST
     NETCARD
     foo
-    END```
+    END
+  ```
